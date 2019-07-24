@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+}
+
+.ui-autocomplete {
+    width: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 75%;
+}
+
+.map-overlay {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 25%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.map-overlay .map-overlay-inner {
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 1px;
+}
+
+.map-overlay h2 {
+    line-height: 24px;
+    display: block;
+    margin: 0 0 10px;
+}
+
+/* style for side list */
+.map-overlay fieldset {
+    background: #ddd;
+    border: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.map-overlay input[type=search] {
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+.map-overlay .listings {
+    position: absolute;
+    overflow-y: auto;
+    max-height: 100%;
+    width: 100%;
+    top: 110px;
+    bottom: 0;
+}
+
+.map-overlay .listings>* {
+    display: block;
+    padding: 5px 10px;
+    margin: 0;
+}
+
+.map-overlay .listings a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #404;
+    text-decoration: none;
+}
+
+.map-overlay .listings a:last-child {
+    border: none;
+}
+
+.map-overlay .listings a:hover {
+    background: #f0f0f0;
+}
+
+.two-col {
+    overflow: hidden;
+    /* Makes this div contain its floats */
+}
+
+.two-col .col1,
+.two-col .col2 {
+    width: 49%;
+}
+
+.two-col .col1 {
+    float: left;
+}
+
+.two-col .col2 {
+    float: right;
+}
+
+.two-col label {
+    display: block;
+}
+
+#menu {
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    left: 26%;
+    top: 1%;
+    padding: 6px 8px;
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
