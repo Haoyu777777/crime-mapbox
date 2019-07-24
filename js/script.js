@@ -10,14 +10,15 @@ if (!('remove' in Element.prototype)) {
 }
 
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiaHloeWh5bCIsImEiOiJjanJpNWJ3OHMwNzNnM3lta2F2aXZ6ZGE1In0.FkWAjG7JohC1g2g5liqxdA';
+mapboxgl.accessToken = 'your API key';
 
 // set the map property, can change 
 let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [-78.4773, 38.0297],
-    zoom: 13
+    zoom: 13,
+    maxZoom: 20
 });
 
 // load data from a local json file
