@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Crime Map</title>
+    <meta charset='utf-8' name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
+
+    <!-- mapbox scource https://docs.mapbox.com/help/tutorials/building-a-store-locator/ -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- mapbox geocoder source -->
+    <script
+        src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.0.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet'
+        href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.0.0/mapbox-gl-geocoder.css'
+        type='text/css' />
+
+    <!-- jquery source code-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- typewach source -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypeWatch/3.0.1/jquery.typewatch.js"></script>
+
+    <!-- d3 source for ajax call -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- clusterize source for efficient list display -->
+    <script src="https://cdn.jsdelivr.net/npm/clusterize.js@0.18.1/clusterize.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clusterize.js@0.18.1/clusterize.min.css">
+
+    <!-- turf spatial analysis lib for counting points in a polygon-->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+
+    <!-- customized style sheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- div for map -->
+    <div id='map'></div>
+
+    <!-- div for changing map style-->
+    <div id='menu'>
+        <label>
+            <input id='streets' type='radio' name='style_option' value='streets-v11' checked='checked' />
+            street
+        </label>
+        <label>
+            <input id='light' type='radio' name='style_option' value='light-v10' />
+            light
+        </label>
+        <label>
+            <input id='dark' type='radio' name='style_option' value='dark-v10' />
+            dark
+        </label>
+        <label>
+            <input id='satellite' type='radio' name='style_option' value='satellite-streets-v10' />
+            satellite
+        </label>
+        <label>
+            <input id='neighborhood' type='checkbox' name="neighborhood" />
+            neighborhood
+        </label>
+    </div>
+
+    <!-- div for slider and user input and result list -->
+    <div class='map-overlay'>
+        <fieldset>
+            <input id="crimeType" type="search" placeholder='Crime Type'>
+        </fieldset>
+        <div class='map-overlay-inner'>
+            <div class="two-col">
+                <div class="col1">
+                    <input type="date" id="start" style="border:0; color:#f6931f; font-weight:bold;">
+                </div>
+                <div class="col1">
+                    <input type='date' id='end' style="border:0; color:#f6931f; font-weight:bold;">
+                </div>
+            </div>
+
+            <div id="timeSelector"></div>
+        </div>
+
+        <div id="scrollArea" class="clusterize-scroll">
+            <div id='listings' class='listings'></div>
+        </div>
+
+    </div>
+
+    <!-- js source -->
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>
